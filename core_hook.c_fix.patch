@@ -1,5 +1,5 @@
---- a/KernelSU-Next/kernel/core_hook.c	2024-12-31 13:55:39.182599900 -0500
-+++ b/KernelSU-Next/kernel/core_hook.c	2024-12-31 14:22:43.994466119 -0500
+--- a/KernelSU/kernel/core_hook.c	2024-12-31 13:55:39.182599900 -0500
++++ b/KernelSU/kernel/core_hook.c	2024-12-31 14:22:43.994466119 -0500
 @@ -920,35 +920,43 @@
  #endif
  	}
