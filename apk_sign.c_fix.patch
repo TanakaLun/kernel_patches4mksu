@@ -1,6 +1,6 @@
---- "./KernelSU-Next/kernel/apk_sign - Copy.c"	2024-12-31 16:19:51.886744500 -0500
-+++ ./KernelSU-Next/kernel/apk_sign.c	2024-12-31 16:25:51.396912664 -0500
-@@ -314,7 +314,16 @@
+--- "./KernelSU/kernel/apk_sign - Copy.c"	2024-12-31 16:19:51.886744500 -0500
++++ ./KernelSU/kernel/apk_sign.c	2024-12-31 16:25:51.396912664 -0500
+@@ -317,3 +317,16 @@
  
  #endif
  
