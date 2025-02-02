@@ -1,4 +1,4 @@
---- a/KernelSU/kernel/core_hook.c	2024-12-31 13:55:39.182599900 -0500
+--- a/KernelSU/kernel/core_hook.c	
 +++ b/KernelSU/kernel/core_hook.c
    @@ -938,7 +938,11 @@
     #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
@@ -23,6 +23,7 @@
     	if (!ksu_uid_should_umount(new_uid.val)) {
     		return 0;
     	} else {
+    #
    @@ -975,10 +975,6 @@
     #endif
     	}
