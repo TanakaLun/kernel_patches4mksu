@@ -23,7 +23,7 @@
  	if (!ksu_uid_should_umount(new_uid.val)) {
  		return 0;
  	} else {
-@@ -975,10 +975,6 @@
+@@ -977,11 +977,8 @@
  #endif
  	}
 
