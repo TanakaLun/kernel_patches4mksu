@@ -1,5 +1,5 @@
---- core_hook.c
-   +++ core_hook.c
+--- a/KernelSU/kernel/core_hook.c	2024-12-31 13:55:39.182599900 -0500
++++ b/KernelSU/kernel/core_hook.c
    @@ -938,7 +938,11 @@
     #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
     	// check if current process is zygote
