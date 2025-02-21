@@ -1,0 +1,27 @@
+--- a/fs/readdir.c	2025-02-18 17:09:31.364144900 -0500
++++ b/fs/readdir.c	2025-02-18 17:06:26.116801000 -0500
+@@ -179,6 +179,12 @@
+ 	int reclen = ALIGN(offsetof(struct linux_dirent, d_name) + namlen + 2,
+ 		sizeof(long));
+ 
++#ifdef CONFIG_KSU_SUSFS_SUS_PATH
++	if (likely(current->susfs_task_state & TASK_STRUCT_NON_ROOT_USER_APP_PROC) && susfs_sus_ino_for_filldir64(ino)) {
++		return 0;
++	}
++#endif
++
+ 	buf->error = -EINVAL;	/* only used if we fail.. */
+ 	if (reclen > buf->count)
+ 		return -EINVAL;
+--- a/fs/proc/task_mmu.c	2025-02-18 17:09:28.103060700 -0500
++++ b/fs/proc/task_mmu.c	2025-02-18 17:11:24.416553200 -0500
+@@ -15,6 +15,9 @@
+ #include <linux/mmu_notifier.h>
+ #include <linux/page_idle.h>
+ #include <linux/shmem_fs.h>
++#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
++#include <linux/susfs_def.h>
++#endif
+ 
+ #include <asm/elf.h>
+ #include <asm/uaccess.h>
